@@ -1,0 +1,30 @@
+use meli_db;
+select * from articulos;
+select * from users;
+
+
+#¿Cuántos clientes tenemos registrados?
+SELECT COUNT(*) AS total_customers
+FROM Customer;
+
+#¿Cuántos productos activos tenemos actualmente en el mercado?
+SELECT COUNT(*) AS total_active_items
+FROM Item
+WHERE estado = 'activo';
+
+#¿Cuántas categorías diferentes existen en nuestro mercado?
+SELECT COUNT(*) AS total_categories
+FROM Category;
+
+#¿cuántas órdenes de compra se realizaron en el último mes?
+SELECT COUNT(*) AS total_orders
+FROM Order
+WHERE fecha >= DATEADD(month, -1, GETDATE());
+
+#¿Cuál es el producto más vendido en nuestro marketplace?
+SELECT TOP 1 i.nombre, SUM(oi.cantidad) AS total_sold
+FROM Item i
+JOIN OrderItem oi ON i.id = oi.item_id
+GROUP BY i.nombre
+ORDER BY total_sold DESC;
+
