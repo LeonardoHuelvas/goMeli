@@ -14,7 +14,7 @@ func EchoRoutes(e *echo.Echo) {
 
 	e.GET("/customer", controllers.GetCustomer)
 	e.GET("/item", controllers.GetCustomer)
-	e.GET("/category", controllers.GetCategory)
-	e.GET("/order", controllers.GetOrder)
+	// e.GET("/category", controllers.GetCategory)
+	// e.GET("/order", controllers.GetOrder)
 
 }

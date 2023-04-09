@@ -1,15 +1,14 @@
 package controllers
 
-import (
-	"net/http"
+// import (
+// 	"net/http"
 
-	"ejemplo.com/m/common"
-	"ejemplo.com/m/entity"
-	"github.com/labstack/echo/v4"
-)
+// 	"ejemplo.com/m/common"
+// 	"github.com/labstack/echo"
+// )
 
-func GetProductos(c echo.Context) error {
-	productosNomb := []entity.Productos{}
-	common.DB.Table("item").Find(&productosNomb)
-	return c.JSON(http.StatusOK, productosNomb)
-}
+// func GetProductos(c echo.Context) error {
+// 	productosNomb := []entity.Productos{}
+// 	common.DB.Table("item").Find(&productosNomb)
+// 	return c.JSON(http.StatusOK, productosNomb)
+// }

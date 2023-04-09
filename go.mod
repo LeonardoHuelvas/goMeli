@@ -1,3 +1,4 @@
+module github.com/LeonardoHuelvas/goMeli.git
 
 go 1.20
 
